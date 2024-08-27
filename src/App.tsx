@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Wrapper from "./components/Wrapper";
+import Home from "./pages/Home";
+import Poem from "./pages/Poem";
+import PoemAdd from "./pages/PoemAdd";
+import PoemEdit from "./pages/PoemEdit";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Profile from "./pages/Profile";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <>
+
+        <BrowserRouter>
+          <Wrapper>
+            <Routes>
+              <Route path="/" element={<Home/>}/>
+              <Route path="/login" element={<Login/>}/>
+              <Route path="/register" element={<Register/>}/>
+              <Route path="/poem" element={<Poem/>}/>
+              <Route path="/addPoem" element={<PoemAdd/>}/>
+              <Route path="/editPoem/:id" element={<PoemEdit/>}/>
+              <Route path="/profile" element={<Profile/>}/>
+            </Routes>
+          </Wrapper>
+        </BrowserRouter>
+
+      </>
+  )
 }
 
-export default App;
+export default App

@@ -1,38 +1,350 @@
-.App {
-  text-align: center;
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.b-example-divider {
+  width: 100%;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.btn-bd-primary {
+  --bd-violet-bg: #712cf9;
+  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+  --bs-btn-font-weight: 600;
+  /*--bs-btn-color: var(--bs-white);*/
+  --bs-btn-bg: var(--bd-violet-bg);
+  --bs-btn-border-color: var(--bd-violet-bg);
+  /*--bs-btn-hover-color: var(--bs-white);*/
+  --bs-btn-hover-bg: #6528e0;
+  --bs-btn-hover-border-color: #6528e0;
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);/*
+  --bs-btn-active-color: var(--bs-btn-hover-color);*/
+  --bs-btn-active-bg: #5a23c8;
+  --bs-btn-active-border-color: #5a23c8;
+}
+
+.bd-mode-toggle {
+  z-index: 1500;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+  display: block !important;
+}
+
+.bg-light {
+  background-color: cornsilk;
+}
+
+.bg-dark{
+  background-color: #344E41;
+}
+
+.txt-dark {
+  color: #1a1a1a;
+}
+
+.txt-light {
+  color: cornsilk;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.link-color-light {
+  color: #A3B18A;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.mx-3 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.me-3 {
+  margin-right: 1rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+/* Remove list item dots */
+.list-unstyled {
+  list-style-type: none;
+  padding-left: 0;  /* Remove any padding if present */
+  margin: 0;  /* Ensure no margin around the list */
+}
+
+.poet-card {
+  margin-bottom: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 300px;
+  height: 350px;
+
+}
+
+.poet-card img {
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+.poet-card .card-body {
+  padding: 15px;
+}
+
+.img-front-page {
+  max-height: 150px;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-image {
+  max-height: 75px;
+  object-fit: cover;
+  display: flex;
+  margin: 10px;
+}
+
+.banner-image {
+  max-height: 250px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/*.add-poem-btn {
+  background-color: #28a745;
+  color: white;
+  !*font-size: 1.2rem;*!
+  border-radius: 50%;
+  !*width: 40px;
+  height: 40px;*!
+  !*display: flex;
+  justify-content: center;
+  align-items: center;*!
+}*/
+
+.add-poem-btn:hover {
+  background-color: #218838;
+}
+
+.browse-poems-container {
+  background-image: url('/public/images/solid-painted-concrete-wall-textured-backdrop.jpg');
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollable-poems-container {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+
+.poem-card {
+  margin-bottom: 20px; /* Add some space between poems */
+  padding: 20px;
+  background-color: #f5f5f5; /* A light background for contrast */
+  border-radius: 8px; /* Rounded corners for a cleaner look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 80vw;
+  min-width: 40vw;
+}
+
+.poem-content {
+  white-space: pre-wrap; /* Ensures line breaks and whitespace are preserved */
+  font-family: 'Georgia', serif; /* Use a serif font for a more literary feel */
+  font-size: 1.1rem; /* Adjust font size to your liking */
+  line-height: 1.5; /* Adjust line height for readability */
+  color: #333; /* Adjust color to suit your theme */
+}
+
+.poem-title {
+  white-space: pre-wrap; /* Ensures line breaks and whitespace are preserved */
+  font-family: 'Georgia', serif; /* Use a serif font for a more literary feel */
+  font-size: 2.1rem; /* Adjust font size to your liking */
+  line-height: 2.5; /* Adjust line height for readability */
+  color: #333; /* Adjust color to suit your theme */
+}
+
+
+.fixed-add-poem-button {
+  position: fixed;
+  top: 130px;          /* Distance from the top */
+  right: 10px;        /* Distance from the right */
+  z-index: 1000;      /* Ensure it stays above other elements */
+  background-color: white;  /* White background */
+  color: black;       /* Black text */
+  border: 1px solid black;  /* Optional: black border */
+  padding: 10px 20px; /* Optional: padding for better appearance */
+  border-radius: 5px; /* Optional: rounded corners */
+  cursor: pointer;    /* Pointer cursor on hover */
+}
+
+.fixed-add-poem-button:hover {
+  background-color: #f0f0f0; /* Slightly darker white on hover */
+  color: black;              /* Keep text black on hover */
+}
+
+
+.m-3 {
+  margin: 3px;
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.my-50 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.input-field-title {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: none; /* Prevent resizing */
+  display: block;
+}
+
+.input-field-verses {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: vertical;
+  display: block;
+}
+
+.form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /*padding: 20px;*/
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.form-container input,
+.form-container textarea {
+  margin-bottom: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.submit-button {
+  width: 100px;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
 }
+
+.submit-button:hover {
+  background-color: #444;
+}
+
+.form-header {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
